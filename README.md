@@ -35,32 +35,32 @@ Loading a database of user from a distant server can take some time and thus mak
 Putting a simple loading gif is a good thing to tell your visitors your application is loading.
 
 ```javascript
-    // controllers.js
-    function myController($scope,loader,distantDatabase)
-    $scope.users = [];
-    loader.loading('users'); // we say the users are loading
-    // Fetching users, can take a while
-    distantDatabase.query({entity:'users'},function(data){
-        console.log(data);
-        $scope.users = data;
-        loader.loaded('users'); // ok, the users are loaded
-    });
+// controllers.js
+function myController($scope,loader,distantDatabase)
+$scope.users = [];
+loader.loading('users'); // we say the users are loading
+// Fetching users, can take a while
+distantDatabase.query({entity:'users'},function(data){
+    console.log(data);
+    $scope.users = data;
+    loader.loaded('users'); // ok, the users are loaded
+});
 
 ```
 
 ```html
-    <!-- index.html -->
-    <table ng-hide="loading.users">
-    <tr ng-repeat="user in users">
-        <td>
-            <img ng-src="{{user.profileImage}}" />
-        </td>
-        <td>{{user.name}} {{user.email}}</td>
-    </tr>
-    </table>
-    <div class="loading" ng-hide="!loading.users">
-        <img src="img/loading.gif"/>
-    </div>
+<!-- index.html -->
+<table ng-hide="loading.users">
+<tr ng-repeat="user in users">
+    <td>
+        <img ng-src="{{user.profileImage}}" />
+    </td>
+    <td>{{user.name}} {{user.email}}</td>
+</tr>
+</table>
+<div class="loading" ng-hide="!loading.users">
+    <img src="img/loading.gif"/>
+</div>
 ```
 
 In this example, the loading gif will be displayed while the users are loading and hidden when they are loaded.
