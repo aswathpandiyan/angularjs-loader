@@ -8,7 +8,7 @@ Simple AngularJS module that allows the application to act differently when some
 ### Step 1 : Add the source js to your project
 
 ```html
-#index.html
+<!-- index.html -->
 ...
 <script type="text/javascript" src="xd-loader.js"></script>
 ...
@@ -16,7 +16,7 @@ Simple AngularJS module that allows the application to act differently when some
 
 ### Step 2 : Load the module in your angular application
 ```javascript
-#app.js
+//app.js
 angular.module('myApp', ['xd.loader']);
 ...
 ```
