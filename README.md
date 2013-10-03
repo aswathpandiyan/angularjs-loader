@@ -35,7 +35,7 @@ Loading a database of user from a distant server can take some time and thus mak
 Putting a simple loading gif is a good thing to tell your visitors your application is loading.
 
 ```javascript
-    #controllers.js
+    // controllers.js
     function myController($scope,loader,distantDatabase)
     $scope.users = [];
     loader.loading('users'); // we say the users are loading
@@ -49,7 +49,7 @@ Putting a simple loading gif is a good thing to tell your visitors your applicat
 ```
 
 ```html
-    #index.html
+    <!-- index.html -->
     <table ng-hide="loading.users">
     <tr ng-repeat="user in users">
         <td>
