@@ -52,10 +52,8 @@ distantDatabase.query({entity:'users'},function(data){
 <!-- index.html -->
 <table ng-hide="loading.users">
 <tr ng-repeat="user in users">
-    <td>
-        <img ng-src="{{user.profileImage}}" />
-    </td>
-    <td>{{user.name}} {{user.email}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
 </tr>
 </table>
 <div class="loading" ng-hide="!loading.users">
