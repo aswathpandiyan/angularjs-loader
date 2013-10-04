@@ -37,14 +37,16 @@ Putting a simple loading gif is a good thing to tell your visitors your applicat
 ```javascript
 // controllers.js
 function myController($scope,loader,distantDatabase)
-$scope.users = [];
-loader.loading('users'); // we say the users are loading
-// Fetching users, can take a while
-distantDatabase.query({entity:'users'},function(data){
-    console.log(data);
-    $scope.users = data;
-    loader.loaded('users'); // ok, the users are loaded
-});
+{
+    $scope.users = [];
+    loader.loading('users'); // we say the users are loading
+    // Fetching users, can take a while
+    distantDatabase.query({entity:'users'},function(data){
+        console.log(data);
+        $scope.users = data;
+        loader.loaded('users'); // ok, the users are loaded
+    });
+}
 
 ```
 
